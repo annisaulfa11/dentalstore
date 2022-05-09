@@ -1,8 +1,8 @@
 # dentalstore
-frontend
+Frontend
 - bima
 - ruth
-backend
+Backend
 - login dan buat database : ica
 - dashboard : ranggi
 - transaksi: suci
