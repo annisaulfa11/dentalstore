@@ -4,13 +4,34 @@
 <head>
     <!-- Load file CSS Bootstrap -->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css" />
 </head>
 
 <body>
-
-    <div class="container">
-        <h2>Login multi user dengan PHP</h2><br>
-        <?php
+    <div class="d-lg-flex half">
+        <div class="contents order-2 order-md-1 bg " style="background-image:url(img/image.png)">
+        </div>
+        <div class="contents con order-1 order-md-2">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-7">
+                        <h3>Welcome to <strong>Xenon</strong></h3>
+                        <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
+                            <div class="form-group first">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" placeholder="Masukan Username" id="username"
+                                    name="username">
+                            </div>
+                            <div class="form-group last mb-3">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password"
+                                    placeholder="Masukan Password" id="password">
+                            </div>
+                            <div class="d-flex mb-5 align-items-center">
+                            </div>
+                            <input type="submit" value="Login" class="but">
+                        </form>
+                        <?php
 		 //Fungsi untuk mencegah inputan karakter yang tidak sesuai
 		 function input($data) {
 			$data = trim($data);
@@ -57,21 +78,13 @@
 		}
 	
 	?>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
-            <div class="form-group">
-                <label>Username:</label>
-                <input type="text" class="form-control" name="username" placeholder="Masukan Username">
-            </div>
-            <div class="form-group">
-                <label>Password:</label>
-                <input type="password" class="form-control" name="password" placeholder="Masukan Password">
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
-            </div>
-        </form>
     </div>
+
 </body>
 
 </html>
