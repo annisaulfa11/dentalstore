@@ -6,7 +6,7 @@
         </div>
 
         <button class="add">
-            <a href="?page=transaksi&action=tambah" class="">
+            <a href="?page=pelanggan&action=tambah" class="">
                 <i class='mdi mdi-plus'></i> Tambah
             </a>
         </button>
@@ -31,12 +31,12 @@
                             <?php
                                 include "../config.php";
                                 $no = 1;
-     $sql = "select * from pelanggan";
+     $sql = "select * from pelanggan order by id_pelanggan";
      $hasil = pg_query($conn,$sql);
      while($row = pg_fetch_assoc($hasil)) {
     ?>
                             <tr class="alert">
-                                <td><?php echo $row['id_pelanggan']; ?></td>
+                                <td><?php echo $no++?></td>
                                 <td><?php echo $row['nama_pelanggan']; ?></td>
                                 <td><?php echo $row['no_hp']; ?></td>
                                 <td><?php echo $row['alamat']; ?></td>

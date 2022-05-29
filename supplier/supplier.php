@@ -31,7 +31,7 @@
                             <?php
                                 include "../config.php";
                                 $no = 1;
-     $sql = "select * from supplier";
+     $sql = "select * from supplier order by id_supplier";
      $hasil = pg_query($conn,$sql);
      while($row = pg_fetch_assoc($hasil)) {
     ?>

@@ -152,21 +152,21 @@ include "../config.php";
         if ($action==""){
             include "../pelanggan/pelanggan.php";
         }elseif ($action=="tambah"){
-            include "../pelanggan";
+            include "../pelanggan/tambah_pelanggan.php";
         }elseif ($action=="update"){
-            include "update_KK.php";
+            include "../pelanggan/edit_pelanggan.php";
         }else{
-            include "hapus_KK.php";
+            include "../pelanggan/hapus_pelanggan.php";
         }
       }elseif ($page=="supplier"){
         if ($action==""){
             include "../supplier/supplier.php";
         }elseif ($action=="tambah"){
-            include "../supplier";
+            include "../supplier/tambah_supplier.php";
         }elseif ($action=="update"){
-            include "update_KK.php";
+            include "../supplier/edit_supplier.php";
         }else{
-            include "hapus_KK.php";
+            include "../supplier/hapus_supplier.php";
         }
       }elseif ($page=="barang"){
         if ($action==""){
