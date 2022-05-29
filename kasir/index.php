@@ -112,42 +112,44 @@ include "../config.php";
         </nav>
         <!-- main-panel ends -->
 
-    </header>
-    <div>
-        <?php
-      $page = isset($_GET['page']) ? $_GET['page'] : "";
-      $action = isset($_GET['action']) ? $_GET['action'] : "";
+        </header>
+        <div>
+            <?php
+        $page = isset($_GET['page']) ? $_GET['page'] : "";
+        $action = isset($_GET['action']) ? $_GET['action'] : "";
 
-      if ($page==""){
-          include "../transaksi/transaksi.php";
-      }elseif ($page=="transaksi"){
-          if ($action==""){
-              include "../transaksi/transaksi.php";
-          }elseif ($action=="tambah"){
-              include "../transaksi/tambah_transaksi.php";
-          }elseif ($action=="update"){
-              include "update_KK.php";
-          }else{
-              include "hapus_KK.php";
-          }
-      }elseif ($page=="pelanggan"){
-        if ($action==""){
-            include "../pelanggan/pelanggan.php";
-        }elseif ($action=="tambah"){
-            include "../pelanggan/tambah_pelanggan.php";
-        }elseif ($action=="update"){
-            include "../pelanggan/edit_pelanggan.php";
+        if ($page==""){
+            include "../transaksi/transaksi.php";
+        }elseif ($page=="transaksi"){
+            if ($action==""){
+                include "../transaksi/transaksi.php";
+            }elseif ($action=="tambah"){
+                include "../transaksi/tambah_transaksi.php";
+            }elseif ($action=="cetak"){
+                include "../transaksi/cetak_transaksi.php";
+            }elseif($action=="update"){
+                include "update_KK.php";
+            }else{
+                include "hapus_KK.php";
+            }
+        }elseif ($page=="pelanggan"){
+            if ($action==""){
+                include "../pelanggan/pelanggan.php";
+            }elseif ($action=="tambah"){
+                include "../pelanggan/tambah_pelanggan.php";
+            }elseif ($action=="update"){
+                include "../pelanggan/edit_pelanggan.php";
+            }else{
+                include "../pelanggan/hapus_pelanggan.php";
+            }
+        }elseif ($page=="barang"){
+            if ($action==""){
+                include "barang.php";
+            }
         }else{
-            include "../pelanggan/hapus_pelanggan.php";
+            include "../transaksi/transaksi.php";
         }
-      }elseif ($page=="barang"){
-        if ($action==""){
-            include "barang.php";
-        }
-       }else{
-          include "../transaksi/transaksi.php";
-      }
-      ?>
+        ?>
 
     </div>
 

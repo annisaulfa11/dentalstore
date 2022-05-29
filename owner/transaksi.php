@@ -8,6 +8,7 @@
         <button class="add">
             <a href="?page=transaksi&action=cetak" class="">
                 <i class='mdi mdi-printer'></i>
+                
             </a>
         </button>
 
