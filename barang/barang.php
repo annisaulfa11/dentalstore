@@ -22,6 +22,7 @@
                             <tr>
                                 <th>ID </th>
                                 <th>NAMA</th>
+                                <th>ID SUPPLIER</th>
                                 <th>SATUAN</th>
                                 <th>HARGA</th>
                                 <th>STOK</th>
@@ -39,6 +40,7 @@
                             <tr class="alert">
                                 <td><?php echo $row['id_barang']; ?></td>
                                 <td><?php echo $row['nama_barang']; ?></td>
+                                <td><?php echo $row['id_supplier']; ?></td>
                                 <td><?php echo $row['satuan']; ?></td>
                                 <td>Rp<?php echo $row['harga']; ?></td>
                                 <td><?php echo $row['stok']; ?></td>

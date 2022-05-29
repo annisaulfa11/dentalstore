@@ -172,11 +172,11 @@ include "../config.php";
         if ($action==""){
             include "../barang/barang.php";
         }elseif ($action=="tambah"){
-            include "../barang";
+            include "../barang/tambah_barang.php";
         }elseif ($action=="update"){
-            include "update_KK.php";
+            include "../barang/edit_barang.php";
         }else{
-            include "hapus_KK.php";
+            include "../barang/hapus_barang.php";
         }
        }else{
           include "admin.php";
