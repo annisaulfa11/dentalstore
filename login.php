@@ -63,9 +63,9 @@
 					header("Location:admin/index.php");
 				} else if ($_SESSION["level"]=$row["level"]==2)
 				{
-					header("Location:owner.php");
+					header("Location:owner/index.php");
 				}else if ($_SESSION["level"]=$row["level"]==1){
-					header("Location:kasir.php");
+					header("Location:kasir/index.php");
 				}
 		
 				

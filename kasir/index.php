@@ -58,16 +58,14 @@ include "../config.php";
         <!-- partial -->
         <nav class="page-body-wrapper sidebar sidebar-offcanvas mt-4" id="sidebar">
             <ul class="nav">
-
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">
+                    <a class="nav-link" href="?page=transaksi">
                         <h3 class="nav-title">
                             <span class="nav-title-icon text-white mr-2">
-                                <i class="mdi mdi-home"></i>
-                            </span> Dashboard
+                                <i class="mdi mdi-cart"></i>
+                            </span> Transaksi
                         </h3>
                     </a>
-
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="?page=pelanggan">
@@ -78,15 +76,7 @@ include "../config.php";
                         </h3>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?page=supplier">
-                        <h3 class="nav-title">
-                            <span class="nav-title-icon text-white mr-2">
-                                <i class="mdi mdi-truck-delivery"></i>
-                            </span> Supplier
-                        </h3>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="?page=barang" aria-expanded="false"
                         aria-controls="ui-basic">
@@ -97,15 +87,7 @@ include "../config.php";
                         </h3>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?page=transaksi">
-                        <h3 class="nav-title">
-                            <span class="nav-title-icon text-white mr-2">
-                                <i class="mdi mdi-cart"></i>
-                            </span> Transaksi
-                        </h3>
-                    </a>
-                </li>
+
 
 
                 <li class="nav-item sidebar-actions">
@@ -120,7 +102,7 @@ include "../config.php";
                         <h3 class="nav-title">
                             <span class="nav-title-icon text-white mr-2">
                                 <i class="mdi mdi-account"></i>
-                            </span> Admin
+                            </span> Kasir
                         </h3>
                         <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
                     </a>
@@ -137,7 +119,7 @@ include "../config.php";
       $action = isset($_GET['action']) ? $_GET['action'] : "";
 
       if ($page==""){
-          include "admin.php";
+          include "../transaksi/transaksi.php";
       }elseif ($page=="transaksi"){
           if ($action==""){
               include "../transaksi/transaksi.php";
@@ -158,28 +140,12 @@ include "../config.php";
         }else{
             include "../pelanggan/hapus_pelanggan.php";
         }
-      }elseif ($page=="supplier"){
-        if ($action==""){
-            include "../supplier/supplier.php";
-        }elseif ($action=="tambah"){
-            include "../supplier/tambah_supplier.php";
-        }elseif ($action=="update"){
-            include "../supplier/edit_supplier.php";
-        }else{
-            include "../supplier/hapus_supplier.php";
-        }
       }elseif ($page=="barang"){
         if ($action==""){
-            include "../barang/barang.php";
-        }elseif ($action=="tambah"){
-            include "../barang";
-        }elseif ($action=="update"){
-            include "update_KK.php";
-        }else{
-            include "hapus_KK.php";
+            include "barang.php";
         }
        }else{
-          include "admin.php";
+          include "../transaksi/transaksi.php";
       }
       ?>
 

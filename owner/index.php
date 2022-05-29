@@ -120,7 +120,7 @@ include "../config.php";
                         <h3 class="nav-title">
                             <span class="nav-title-icon text-white mr-2">
                                 <i class="mdi mdi-account"></i>
-                            </span> Admin
+                            </span> Owner
                         </h3>
                         <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
                     </a>
@@ -137,49 +137,25 @@ include "../config.php";
       $action = isset($_GET['action']) ? $_GET['action'] : "";
 
       if ($page==""){
-          include "admin.php";
+          include "owner.php";
       }elseif ($page=="transaksi"){
           if ($action==""){
-              include "../transaksi/transaksi.php";
-          }elseif ($action=="tambah"){
-              include "../transaksi/tambah_transaksi.php";
-          }elseif ($action=="update"){
-              include "update_KK.php";
-          }else{
-              include "hapus_KK.php";
+              include "transaksi.php";
           }
       }elseif ($page=="pelanggan"){
         if ($action==""){
-            include "../pelanggan/pelanggan.php";
-        }elseif ($action=="tambah"){
-            include "../pelanggan/tambah_pelanggan.php";
-        }elseif ($action=="update"){
-            include "../pelanggan/edit_pelanggan.php";
-        }else{
-            include "../pelanggan/hapus_pelanggan.php";
+            include "pelanggan.php";
         }
       }elseif ($page=="supplier"){
         if ($action==""){
-            include "../supplier/supplier.php";
-        }elseif ($action=="tambah"){
-            include "../supplier/tambah_supplier.php";
-        }elseif ($action=="update"){
-            include "../supplier/edit_supplier.php";
-        }else{
-            include "../supplier/hapus_supplier.php";
+            include "supplier.php";
         }
       }elseif ($page=="barang"){
         if ($action==""){
-            include "../barang/barang.php";
-        }elseif ($action=="tambah"){
-            include "../barang";
-        }elseif ($action=="update"){
-            include "update_KK.php";
-        }else{
-            include "hapus_KK.php";
+            include "barang.php";
         }
        }else{
-          include "admin.php";
+          include "owner.php";
       }
       ?>
 
