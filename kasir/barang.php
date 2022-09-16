@@ -4,20 +4,10 @@
             <h3 class="fw-bolder mb-4">Data Barang</h3>
 
         </div>
-
-        <button class="add">
-            <a href="?page=barang&action=cetak" class="">
-                <i class='mdi mdi-printer'></i>
-            </a>
-        </button>
-
-
-
-
         <div class="row">
             <div class="col-md-12">
                 <div class="table-wrap">
-                    <table class="table table-responsive-xl">
+                    <table id="table_id" class="table table-responsive-xl">
                         <thead>
                             <tr>
                                 <th>ID </th>
@@ -52,5 +42,10 @@
                 </div>
             </div>
         </div>
+        <form action="../cetak/cetak_barang.php" target="_blank" class="d-flex justify-content-end ">
+            <button class="add mt-4" type="submit">
+                <i class='mdi mdi-printer'></i> Print
+            </button>
+        </form>
     </div>
 </section>

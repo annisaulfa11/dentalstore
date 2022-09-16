@@ -5,12 +5,7 @@
 
         </div>
 
-        <button class="add">
-            <a href="?page=transaksi&action=cetak" class="">
-                <i class='mdi mdi-printer'></i>
-                
-            </a>
-        </button>
+
 
 
 
@@ -18,7 +13,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="table-wrap">
-                    <table class="table table-responsive-xl">
+                    <table id="table_id" class="table table-responsive-xl">
                         <thead>
                             <tr>
                                 <th>NO</th>
@@ -41,7 +36,7 @@
                                 <td><?php echo $row['no_faktur']; ?></td>
                                 <td><?php echo $row['tanggal']; ?></td>
                                 <td><?php echo $row['id_pelanggan']; ?></td>
-                                <td>Rp<?php echo $row['total']; ?></td>
+                                <td>Rp<?php echo number_format($row['total']); ?></td>
                             </tr>
                             <?php
      }
@@ -53,5 +48,10 @@
                 </div>
             </div>
         </div>
+        <form action="../cetak/cetak_transaksi.php" target="_blank" class="d-flex justify-content-end ">
+            <button class="add mt-4" type="submit">
+                <i class='mdi mdi-printer'></i> Print
+            </button>
+        </form>
     </div>
 </section>

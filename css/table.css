@@ -1,30 +1,38 @@
-.table-wrap {
-  overflow-x: scroll;
-  box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 6%);
+div .table-wrap {
   border-collapse: collapse;
-  border-radius: 8px;
   margin-top: 20px;
+  overflow-x: auto;
 }
-.table {
-  min-width: 1000px !important;
+.table-wrap .table {
   width: 100%;
   -webkit-box-shadow: 0 5px 12px -12px rgb(0 0 0 / 29%);
   -moz-box-shadow: 0 5px 12px -12px rgba(0, 0, 0, 0.29);
-  box-shadow: 0 5px 12px -12px rgb(0 0 0 / 29%);
+  box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 6%);
+  padding: 20px;
+  margin: 10px auto;
 }
-.table tbody tr {
+.table-wrap .table tbody tr {
   margin-bottom: 10px;
   border-bottom: 4px solid #f8f9fd;
 }
 
-.table tbody th,
-.table tbody td {
+.table-wrap .table thead th {
+   {
+    border: none;
+    padding: 18px;
+    font-size: 14px;
+    vertical-align: middle;
+    font-family: "Montserrat";
+    font-weight: bold;
+  }
+}
+.table-wrap .table tbody td {
   border: none;
   padding: 18px;
   font-size: 14px;
   vertical-align: middle;
-  text-align: center;
   font-family: "Montserrat";
+  font-weight: 400;
 }
 .editb {
   font-size: 23px;
@@ -40,24 +48,56 @@ th {
   font-size: 14px;
   line-height: 17px;
   padding: 20px;
+  font-weight: bolder;
 }
-tr:nth-child(even) {
+.table tr:nth-child(even) {
   background-color: #f7f6fe;
 }
+.func {
+  justify-content: space-between;
+}
 
-.add {
-  padding: 12px 35px;
+.add1 {
+  padding: 10px;
   text-align: center;
   gap: 8px;
   text-decoration: none;
   border: none;
   color: #fff;
   background: #624de3;
-  border-radius: 20px;
+  border-radius: 10px;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+}
+.add1 a {
+  text-decoration: none;
+  color: #fff;
+}
+.add1 i {
+  margin-right: 0px;
+}
+.add {
+  padding: 12px 30px;
+  text-align: center;
+  gap: 8px;
+  text-decoration: none;
+  border: none;
+  color: #fff;
+  background: #624de3;
+  border-radius: 18px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+}
+.add i {
+  margin-right: 10px;
 }
 .add a {
   text-decoration: none;
@@ -73,5 +113,6 @@ button i {
 }
 button:hover {
   text-decoration: none;
-  background-color: #a193ff;
+  background-color: #372f68;
+  transition: ease-in 0.2s;
 }

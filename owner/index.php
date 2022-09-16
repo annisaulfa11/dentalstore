@@ -13,6 +13,11 @@ include "../config.php";
     <!-- plugins:css -->
     <link rel="stylesheet" href="../node_modules/@mdi/font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../vendor/vendor.bundle.base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -22,9 +27,10 @@ include "../config.php";
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/table.css">
     <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../vendor/DataTables/datatables.min.css">
 
-    <!-- End layout styles -->
-    <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+
+
 </head>
 
 <body>
@@ -38,9 +44,7 @@ include "../config.php";
                 </a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
-                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-                    <span class="mdi mdi-menu"></span>
-                </button>
+
 
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item nav-logout d-none d-lg-block">
@@ -84,6 +88,15 @@ include "../config.php";
                             <span class="nav-title-icon text-white mr-2">
                                 <i class="mdi mdi-truck-delivery"></i>
                             </span> Supplier
+                        </h3>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?page=stok">
+                        <h3 class="nav-title">
+                            <span class="nav-title-icon text-white mr-2">
+                                <i class="mdi mdi-cylinder"></i>
+                            </span> Stok
                         </h3>
                     </a>
                 </li>
@@ -137,7 +150,7 @@ include "../config.php";
       $action = isset($_GET['action']) ? $_GET['action'] : "";
 
       if ($page==""){
-          include "owner.php";
+          include "dashboard.php";
       }elseif ($page=="transaksi"){
           if ($action==""){
               include "transaksi.php";
@@ -154,15 +167,26 @@ include "../config.php";
         if ($action==""){
             include "barang.php";
         }
+       }elseif ($page=="stok"){
+        if ($action==""){
+            include "stok.php";
+        }
        }else{
-          include "owner.php";
+          include "dashboard.php";
       }
       ?>
 
     </div>
 
     <!-- container-scroller -->
-    <script src="../js/axios.min.js"></script>
+    <script src="../vendor/jquery.js"></script>
+
+    <script src="../vendor/DataTables/datatables.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#table_id').DataTable();
+    });
+    </script>
 </body>
 
 </html>

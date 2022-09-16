@@ -5,25 +5,16 @@
 
         </div>
 
-        <button class="add">
-            <a href="?page=pelanggan&action=cetak" class="">
-                <i class='mdi mdi-printer'></i>
-            </a>
-        </button>
-
-
-
-
         <div class="row">
             <div class="col-md-12">
                 <div class="table-wrap">
-                    <table class="table table-responsive-xl">
+                    <table id="table_id" class="table table-responsive-xl">
                         <thead>
                             <tr>
-                                <th>ID PELANGGAN</th>
+                                <th width="5%">ID</th>
                                 <th>NAMA</th>
                                 <th>NO HP</th>
-                                <th>ALAMAT</th>
+                                <th width="30%">ALAMAT</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,5 +41,11 @@
                 </div>
             </div>
         </div>
+        <form action="../cetak/cetak_pelanggan.php" target="_blank" class="d-flex justify-content-end ">
+            <button class="add mt-4" type="submit">
+                <i class='mdi mdi-printer'></i> Print
+            </button>
+        </form>
+
     </div>
 </section>

@@ -1,30 +1,28 @@
 <section class="main-panel">
     <div class="container">
-        <div class="section-title">
+
+        <div class="section-title d-flex func">
             <h3 class="fw-bolder mb-4">Data Supplier</h3>
+            <button class="add1">
+                <a href="?page=supplier&action=tambah" class="">
+                    <i class='mdi mdi-plus'></i>
+                </a>
+            </button>
 
         </div>
-
-        <button class="add">
-            <a href="?page=supplier&action=tambah" class="">
-                <i class='mdi mdi-plus'></i> Tambah
-            </a>
-        </button>
-
-
 
 
         <div class="row">
             <div class="col-md-12">
                 <div class="table-wrap">
-                    <table class="table table-responsive-xl">
+                    <table id="table_id" class="table table-responsive-xl">
                         <thead>
                             <tr>
-                                <th width="50px">ID</th>
-                                <th width="200px">NAMA</th>
-                                <th width="130px">NO HP</th>
-                                <th width="250px">ALAMAT</th>
-                                <th width="50px">AKSI</th>
+                                <th width="5%">ID</th>
+                                <th width="30%">NAMA</th>
+                                <th width="20%">NO HP</th>
+                                <th width="40%">ALAMAT</th>
+                                <th width="5%">AKSI</th>
                             </tr>
                         </thead>
                         <tbody>

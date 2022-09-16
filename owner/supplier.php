@@ -5,19 +5,10 @@
 
         </div>
 
-        <button class="add">
-            <a href="?page=supplier&action=cetak" class="">
-                <i class='mdi mdi-printer'></i>
-            </a>
-        </button>
-
-
-
-
         <div class="row">
             <div class="col-md-12">
                 <div class="table-wrap">
-                    <table class="table table-responsive-xl">
+                    <table id="table_id" class="table table-responsive-xl">
                         <thead>
                             <tr>
                                 <th width="50px">ID</th>
@@ -50,5 +41,11 @@
                 </div>
             </div>
         </div>
+        <form action="../cetak/cetak_supplier.php" target="_blank" class="d-flex justify-content-end ">
+            <button class="add mt-4" type="submit">
+                <i class='mdi mdi-printer'></i> Print
+            </button>
+        </form>
+
     </div>
 </section>

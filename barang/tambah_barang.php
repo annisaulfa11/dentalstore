@@ -15,25 +15,27 @@ $harga = $_POST['harga'];
 $stok = $_POST['stok'];
 $id_kategori = $_POST['idk'];
 
+if($harga < 1000){
+    ?>
+        <script type="text/javascript">
+        alert("Masukkan HARGA dengan benar!");
+        window.location.href = "?page=barang&action=tambah";
+        </script>
+        <?php
+} else {
 
-
-$sql = pg_query($conn, "insert into barang (id_barang,nama_barang,id_supplier,stok,satuan,harga, id) values('$id_barang','$nama_barang','$id_supplier','$stok','$satuan','$harga','$id_kategori')");
-
-if ($sql) {
-?>
-
+    $sql = pg_query($conn, "insert into barang (id_barang,nama_barang,id_supplier,stok,satuan,harga, id) values('$id_barang','$nama_barang','$id_supplier','$stok','$satuan','$harga','$id_kategori')");
+    ?>
         <script type="text/javascript">
         alert("Data Berhasil di Simpan");
         window.location.href = "?page=barang";
         </script>
-
-
         <?php
 }
 }
 ?>
 
-        <form method="POST" class="d-flex">
+        <form method="POST" class="d-flex" onsubmit="cek()">
             <div class="col-sm-6">
                 <label for="">Id Barang</label>
                 <div class="form-group">
@@ -72,7 +74,7 @@ if ($sql) {
                 <label for="">Stok</label>
                 <div class="form-group">
                     <div class="form-line">
-                        <input type="number" name="stok" class="form-control" required />
+                        <input type="number" name="stok" class="form-control" value="0" readonly />
                     </div>
                 </div>
 

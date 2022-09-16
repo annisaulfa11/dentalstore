@@ -1,15 +1,16 @@
 <section class="main-panel">
     <div class="container">
-        <div class="section-title">
+        <div class="section-title d-flex func">
             <h3 class="fw-bolder mb-4">Data Barang</h3>
+
+            <button class="add1">
+                <a href="?page=barang&action=tambah" class="">
+                    <i class='mdi mdi-plus'></i>
+                </a>
+            </button>
 
         </div>
 
-        <button class="add">
-            <a href="?page=barang&action=tambah" class="">
-                <i class='mdi mdi-plus'></i> Tambah
-            </a>
-        </button>
 
 
 
@@ -17,7 +18,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="table-wrap">
-                    <table class="table table-responsive-xl">
+                    <table id="table_id" class="table table-responsive-xl">
                         <thead>
                             <tr>
                                 <th>ID </th>
@@ -26,7 +27,7 @@
                                 <th>SATUAN</th>
                                 <th>HARGA</th>
                                 <th>STOK</th>
-                                <th>AKSI</th>
+                                <th width="50px">AKSI</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,6 +63,13 @@
                     </table>
                 </div>
             </div>
+        </div>
+        <div class="d-flex justify-content-end mt-3">
+            <form action="../cetak/cetak_barang.php" target="_blank" class="d-flex justify-content-end ">
+                <button class="add mt-4" type="submit">
+                    <i class='mdi mdi-printer'></i> Print
+                </button>
+            </form>
         </div>
     </div>
 </section>

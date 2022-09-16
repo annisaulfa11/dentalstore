@@ -18,7 +18,23 @@ if (isset($_POST['simpan'])) {
     $id_kategori = $_POST['idk'];
     
 
-$sql = pg_query($conn,"update  barang  set nama_barang='$nama_barang',satuan='$satuan', id_supplier='$id_supplier', harga='$harga', stok='$stok', id ='$id_kategori' where id_barang='$kode'");
+    if($stok < 1){
+        ?>
+        <script type="text/javascript">
+        alert("Masukkan STOK dengan benar!");
+        window.location.href = "?page=barang&action=update&id_barang=<?php echo $kode; ?>";
+        </script>
+        <?php
+    }  else if($harga < 1000){
+        ?>
+        <script type="text/javascript">
+        alert("Masukkan HARGA dengan benar!");
+        window.location.href = "?page=barang&action=update&id_barang=<?php echo $kode; ?>";
+        </script>
+        <?php
+    } else {
+        $sql = pg_query($conn,"update  barang  set nama_barang='$nama_barang',satuan='$satuan', id_supplier='$id_supplier', harga='$harga', stok='$stok', id ='$id_kategori' where id_barang='$kode'");
+    }
 
 if ($sql) {
 ?>
@@ -42,7 +58,7 @@ if ($sql) {
                 <div class="form-group">
                     <div class="form-line">
                         <input type="text" value="<?php echo $tampil['id_barang']?>" name="id_barang"
-                            class="form-control" maxlength="5" required />
+                            class="form-control" maxlength="5" readonly />
                     </div>
                 </div>
 
@@ -80,7 +96,7 @@ if ($sql) {
                 <div class="form-group">
                     <div class="form-line">
                         <input type="number" value="<?php echo $tampil['stok']?>" name="stok" class="form-control"
-                            required />
+                            readonly />
                     </div>
                 </div>
 
